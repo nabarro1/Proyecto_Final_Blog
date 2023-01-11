@@ -1,0 +1,31 @@
+{% extends 'appBlog/base.html' %}
+{% block titulo %}
+<div class="site-heading">
+    <h1>Aquí puedes ver los posteos que se han hecho</h1>
+    <span class="subheading">¿Haz subido mal una publicación y no sabes cómo solucionarlo?</span>
+    <span class="subheading">Aquí debajo te dejamos las herramientas que necesitas</span>
+    <span class="subheading">⬇️</span>
+</div>
+{% endblock titulo %}
+{% block contenido %}
+<!-- {% if user.is_authenticated %}
+<a class="border border-primary p-3  ms-3" href="{% url 'appBlog-user-actualizar' user.id%}">Modifica tu Usuario</a>
+{% endif %} -->
+<ul>
+{% for post in object_list  %}
+    <div class="container">
+        <li>{{post.titulo}}
+            <br>
+            {{post.sub_titulo}}
+            <br>
+            {% if  user.is_authenticated%}
+            <div class="container d-flex">
+                <a href="{% url 'appBlog-actualizar' post.id %}" class="border border-primary p-3 ms-5">Actualizar</a>
+                <a href="{% url 'appBlog-borrar' post.id %}" class="border border-primary p-3 ms-3">Borrar</a>
+                <a href="{% url 'appBlog-detalle' post.id %}" class="border border-primary p-3  ms-3">Ver</a>
+            </div>
+            {% endif %}
+        </li>
+{% endfor %}
+</ul>
+{% endblock contenido %}

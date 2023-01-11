@@ -1,0 +1,18 @@
+{% extends 'appBlog/base.html' %}
+{% block titulo %}
+<div class="site-heading">
+    <h1>Regístrate ahora si no tienes cuenta</h1>
+    <h2>Podrás tener acceso a muchas más opciones.</h2>
+    <span class="subheading"><a href="{% url 'appBlog-ingresar'%}">¿Ya tienes una cuenta? INICIA SESION AQUÍ</a></span>
+</div>
+{% endblock titulo %}
+{% block contenido %}
+<div class="container border">
+    <h2>Registrame</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}   
+        <input type="submit" value="Registrarme" class="container">  
+    </form>
+</div>
+{% endblock contenido %}

@@ -1,0 +1,18 @@
+{% extends 'appBlog/base.html' %}
+
+{% block titulo %}
+<div class="site-heading">
+    <h1>Crear tu Post</h1>
+    <span class="subheading">Recuerda que el limite del texto son 2000 caracteres</span>
+</div>
+{% endblock titulo %}
+
+{% block contenido %}
+<div class="container border d-flex justify-content-center align-items-center">
+    <form enctype="multipart/form-data" method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Actualizar" class="container">
+    </form>
+</div>
+{% endblock contenido %}

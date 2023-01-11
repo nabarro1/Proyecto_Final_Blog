@@ -1,0 +1,8 @@
+{% extends 'appBlog/base.html' %}
+{% block contenido %}
+<form method="post">
+    {% csrf_token %}
+    "¿ Estás seguro de borrar el familiar {{ object }} ?"
+    <input type="submit" value="SI">
+</form>
+{% endblock contenido %}

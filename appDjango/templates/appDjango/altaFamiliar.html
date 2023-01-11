@@ -1,0 +1,13 @@
+{% extends 'appDjango/base.html' %}
+{% block titulo %}Crear Familiar{% endblock %}
+{% block contenido %}
+            <div class="main__contenedor-principal__botones">    
+                <form action="/mi-familia/alta" method="post">
+                    {% csrf_token %}
+                    {{ form }}
+                    <input type="submit" value="Enviar" id="boton-enviar">
+                </form>
+                <p style="color:green">{{msg_exito}}</p>
+                <a href="/mi-familia/"><h2>Volver a mi familia</h2></a>
+            </div>
+{% endblock %}

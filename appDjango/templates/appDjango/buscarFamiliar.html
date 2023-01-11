@@ -1,0 +1,21 @@
+{% extends 'appDjango/base.html' %}
+{% block titulo %}Buscador de Familiar{% endblock %}
+{% block contenido %}
+        <div class="main__contenedor-principal__botones">
+            <form action="/mi-familia/buscarFamiliar" method="post">
+                {% csrf_token %}
+                {{ form }}
+                <input type="submit" value="Enviar" id="boton-enviar">
+            </form>
+        </div>
+        <div class="main__contenedor-principal__lista" >
+            {% for familiar in lista_familiares %}
+                <ul>
+                    <li class="animate__animated animate__flipInX"> Nombre: {{familiar.nombre}}, DNI: {{familiar.dni}}, Fecha de Nacimiento: {{familiar.fecha_de_nacimiento}}
+                    </li>
+                    <a href='/mi-familia/actualizar/{{ familiar.id }}'>{% load static %}<img src="{% static 'edit.png' %}" alt=""></a>
+                    <a href='/mi-familia/borrar/{{ familiar.id }}'>{% load static %}<img src="{% static 'delete.png' %}" alt=""></a>
+                </ul>
+            {% endfor %}
+        </div>
+{% endblock %}

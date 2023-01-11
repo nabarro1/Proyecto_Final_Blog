@@ -1,0 +1,24 @@
+{% extends 'appDjango/base.html' %}
+{% block titulo %}Lista de Vehiculos{% endblock %}
+{% block contenido %}  
+            <div class="main__contenedor-principal__botones">
+                <form action="/vehiculos/buscarVehiculo" method="post">
+                    {% csrf_token %}
+                    {{ form }}
+                    <label for="id_marca">Marca:</label>
+                    <input type="text" placeholder="Ingrese el vehiculo a buscar..."required id="id_marca" name="marca" maxlength="100">
+                    <input type="submit" value="Enviar" id="boton-enviar">
+                </form>
+            </div>
+            <a href="/vehiculos/alta" id="boton-alta">Crear Vehiculo</a>
+            <div class="main__contenedor-principal__lista">
+                {% for vehiculo in lista_vehiculos %}
+                    <ul>
+                        <li class="animate__animated animate__flipInX"> Tipo: {{vehiculo.tipo}}, Antiguedad: {{vehiculo.antiguedad}}, Marca: {{vehiculo.marca}} 
+                        </li>
+                        <a href='/vehiculos/actualizar/{{ vehiculo.id }}'>{% load static %}<img src="{% static 'edit.png' %}" alt=""></a>
+                        <a href='/vehiculos/borrar/{{ vehiculo.id }}'>{% load static %}<img src="{% static 'delete.png' %}" alt=""></a>
+                    </ul>
+                {% endfor %}
+            </div>
+            {% endblock %}

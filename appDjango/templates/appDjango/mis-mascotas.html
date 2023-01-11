@@ -1,0 +1,24 @@
+{% extends 'appDjango/base.html' %}
+{% block titulo %}Lista de Mascotas{% endblock %}
+{% block contenido %}
+<div class="main__contenedor-principal__botones">
+    <form action="/mis-mascotas/buscarMascota" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <label for="id_nombre">Nombre:</label>
+        <input type="text" placeholder="Ingrese el familiar a buscar..."required id="id_nombre" name="nombre" maxlength="100">
+        <input type="submit" value="Enviar" id="boton-enviar">
+    </form>
+</div>
+<a href="/mis-mascotas/alta" id="boton-alta">Crear Mascota</a>
+<div class="main__contenedor-principal__lista">
+    {% for mascota in lista_mascotas %}
+        <ul>
+            <li class="animate__animated animate__flipInX"> Nombre: {{mascota.nombre}}, Edad: {{mascota.edad}}, Animal: {{mascota.animal}}</li> 
+            <a href='/mis-mascotas/actualizar/{{ mascota.id }}'>{% load static %}<img src="{% static 'edit.png' %}" alt=""></a>
+            <a href='/mis-mascotas/borrar/{{ mascota.id }}'>{% load static %}<img src="{% static 'delete.png' %}" alt=""></a>
+
+        </ul>
+    {% endfor %}
+</div>
+{% endblock %}

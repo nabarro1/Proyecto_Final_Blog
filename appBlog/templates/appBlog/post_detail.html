@@ -1,0 +1,11 @@
+{% extends 'appBlog/base.html' %}
+{% block contenido %}
+<div class="container d-flex">
+    <img src="{{object.imagen.url}}">
+    <div class="container">
+        <h1>{{object.titulo}}</h1>
+        <h2>{{object.sub_titulo}}</h2>
+        <p>{{object.texto}}</p>
+    </div>
+</div>
+{% endblock contenido %}

@@ -1,0 +1,19 @@
+{% extends 'appBlog/base.html' %}
+
+{% block titulo %}
+<div class="site-heading">
+    <h1>Crea tu Post</h1>
+    <span class="subheading">Aquí podrás crear tu post de manera muy sencilla</span>
+    <span class="subheading">Sigue los pasos que abajo se detallan⬇</span>
+</div>
+{% endblock titulo %}
+
+{% block contenido %}
+<div class="container border d-flex justify-content-center align-items-center">
+    <form enctype="multipart/form-data" method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Postear" class="container">
+    </form>
+</div>
+{% endblock contenido %}

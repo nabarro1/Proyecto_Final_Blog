@@ -1,0 +1,233 @@
+*{
+    border: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body{
+    background: rgb(2,0,36);
+background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(5,179,149,1) 0%, rgba(0,191,255,1) 100%);;
+
+}
+
+h1{
+    font-size: 40px;
+    font-weight: lighter;
+    text-decoration: underline;
+}
+
+label {
+    font-size: 20px;
+}
+
+/* -------------------- MAIN ---------------------- */
+
+.main__contenedor-principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-left: 25%;
+    box-shadow: 1px 10px 47px -3px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 1px 10px 47px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 10px 47px -3px rgba(0,0,0,0.75);
+    background-color: #a0ebde;
+}
+.main__contenedor-principal__botones{
+    /* border: 1px solid blue; */
+    width: 100%;
+    text-align: center;
+}
+
+.main__contenedor-principal__botones form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* border: 1px solid black; */
+}
+
+.main__contenedor-principal__botones form select{
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+#input-principal{
+    text-decoration: solid;
+    font-style: italic;
+    padding: 5px 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 50%;
+    margin-left: 2px;
+}
+
+#input-principal:hover{
+    animation-name: escalar-input;
+    animation-iteration-count: initial;
+    animation-fill-mode: forwards;
+    animation-duration: .3s;
+}
+
+.main__contenedor-principal__lista{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.main__contenedor-principal__lista ul{
+    list-style: disc;
+}
+
+.main__contenedor-principal__lista ul li{
+    font-size: 20px;
+    padding: 20px 5px;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-weight: lighter;
+    background-color: rgb(240, 240, 240);
+}
+
+.main__contenedor-principal__lista ul li:hover{
+    cursor: grab;
+    /* transition-delay: .2s;
+    animation-name: escalar;
+    animation-iteration-count: initial;
+    animation-fill-mode: both;
+    animation-duration: 1s; */
+} 
+
+.main__contenedor-principal__lista ul a img{
+    padding: 5px;
+    height: 30px;
+}
+
+
+#boton-alta{
+    border: 1px solid black;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 2px;
+    margin-top: 8px;
+    background-color: white;
+    color: black;
+}
+
+#boton-alta:hover{
+    cursor: pointer;
+    background-color: rgb(95, 230, 102);
+}
+
+#boton-volver{
+    display: block;
+    border: 1px solid black;
+    text-decoration: none;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    padding: 5px;
+    width: 20%;
+    margin-left: 40%;
+
+}
+
+#boton-volver:hover{
+    cursor: pointer;
+    background-color: rgb(95, 230, 102);}
+
+
+/* -------------------- DJANGO ---------------------- */
+
+
+
+#id_nombre {
+    border: 1px solid black;
+    border-radius: 10px;
+    text-align: center;
+    width: 250px;
+
+}
+
+#id_dni{
+    border: 1px solid black;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#id_fecha_de_nacimiento{
+    border: 1px solid black;
+    border-radius: 10px;
+    text-align: center;
+
+}
+
+#boton-enviar {
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+#boton-enviar:hover{
+    cursor: pointer;
+    background-color: rgb(95, 230, 102);
+
+}
+
+#id_edad{
+    border: 1px solid black;
+    border-radius: 10px;
+    text-align: center;
+
+}
+
+#id_animal{
+    border: 1px solid black;
+    border-radius: 10px;
+    text-align: center;
+
+}
+
+#id_tipo {
+    border: 1px solid black;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#id_antiguedad {
+    border: 1px solid black;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#id_marca {
+    border: 1px solid black;
+    border-radius: 10px;
+    text-align: center;
+    width: 250px;
+}
+
+
+
+/* -------------------KEYFRAMES---------------------- */
+
+@keyframes escalar{
+    0%{
+        transform: scale(1,1);
+    }
+    100%{
+        transform: scale(1.1,1.1);
+    }
+}
+
+@keyframes escalar-input{
+    0%{
+        transform: scale(1,1);
+    }
+    100%{
+        transform: scale(1,1.5);
+    }
+}
+
+@keyframes flip-left{
+
+}

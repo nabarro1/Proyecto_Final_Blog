@@ -1,0 +1,21 @@
+{% extends 'appDjango/base.html' %}
+{% block titulo %}Buscador de Vehiculo{% endblock %}
+{% block contenido %}
+        <div class="main__contenedor-principal__botones">
+            <form action="/vehiculos/buscarVehiculo" method="post">
+                {% csrf_token %}
+                {{ form }}
+                <input type="submit" value="Enviar" id="boton-enviar">
+            </form>
+        </div>
+        <div class="main__contenedor-principal__lista" >
+            {% for vehiculo in lista_vehiculos %}
+                <ul>
+                    <li class="animate__animated animate__flipInX"> Tipo: {{vehiculo.tipo}}, Antiguedad: {{vehiculo.antiguedad}}, Marca: {{vehiculo.marca}}
+                    </li>
+                    <a href='/vehiculos/actualizar/{{ vehiculo.id }}'>{% load static %}<img src="{% static 'edit.png' %}" alt=""></a>
+                    <a href='/vehiculos/borrar/{{ vehiculo.id }}'>{% load static %}<img src="{% static 'delete.png' %}" alt=""></a>
+                </ul>
+            {% endfor %}
+        </div>
+{% endblock %}

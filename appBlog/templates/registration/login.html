@@ -1,0 +1,17 @@
+{% extends 'appBlog/base.html' %}
+{% block titulo %}
+<div class="site-heading">
+    <h1>Ingresar</h1>
+    <span class="subheading"><a href="{% url 'appBlog-registro'%}">¿No tienes una cuenta? REGISTRATE AQUÍ</a></span>
+</div>
+{% endblock titulo %}
+{% block contenido %}
+<div class="container border d-flex justify-content-around align-items-center">
+    <h1>Ingresar a la web</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}   
+        <input type="submit" value="Ingresar" class="container">  
+    </form>
+</div>
+{% endblock contenido %}

@@ -1,0 +1,16 @@
+{% extends 'appBlog/base.html' %}
+{% block titulo %}
+<div class="site-heading">
+    <h1>Actualizar Usuario</h1>
+</div>
+{% endblock titulo %}
+
+{% block contenido %}
+<div class="container border d-flex justify-content-center align-items-center">
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Actualizar" class="container">
+    </form>
+</div>
+{% endblock contenido %}
